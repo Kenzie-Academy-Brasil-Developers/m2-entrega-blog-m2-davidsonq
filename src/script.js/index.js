@@ -1,4 +1,4 @@
-import { ApiRequest } from "./request.js";
+import {ApiRequest} from "./request.js";
 
 class PaginaLogin {
     static renderizarPaginaLogin (){
