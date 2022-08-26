@@ -2,7 +2,7 @@ export class ApiRequest {
     static baseUrl = "https://blog-m2.herokuapp.com"
     static token = localStorage.getItem("@blogKenzie:token") || ""
     static headers = {
-        "Content-Type": application/json,
+        "Content-Type": "application/json",
         Authorization: `Bearer ${this.token}`
     }
     static async login (body){
@@ -11,8 +11,9 @@ export class ApiRequest {
             headers : this.headers,
             body: json.stringfy(body)
         })
-        .then(res => res.json)
+        .then(res => res.json())
         .then(res => {
+            console.log(res);
             localStorage.setItem("@blogKenzie:token" , res.token)
             localStorage.setItem("@blogKenzie:Usuario_Id", res.userId)
         })

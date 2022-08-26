@@ -18,7 +18,8 @@ class PaginaLogin {
                 email: emailInput.value,  
                 passwordInput : passwordInput.value
             }
-            ApiRequest.login(dados)
+            console.log(ApiRequest.login(dados));
+            
         })
     }
     static cadastreAqui() {
