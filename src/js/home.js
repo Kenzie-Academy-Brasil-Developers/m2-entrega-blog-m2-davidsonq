@@ -1,10 +1,11 @@
 import { Api } from "./Api.js";
+import {Postagem} from "./post.js";
 export class RendHome{
     static ul        = document.querySelector(".secao__lista");
     static limparUl (){
         this.ul.innerHTML = "";
     };
-    static creatElement(objApi){
+    static async creatElement(objApi){
         this.limparUl()
         console.log(objApi.data);
         objApi.data.forEach(el => {
@@ -27,7 +28,7 @@ export class RendHome{
             p.innerText          = `${el.content}`;
             span.innerText       =`${tratamentoData}`;
             div.classList.add("secao__lista-divHiden");
-            if (el.user.id == localStorage.getItem("MyId")) {
+            if (el.user.id == localStorage.getItem("@blogKenzie:Usuario_Id")) {
                 div.classList.add("secao__lista__div")
             }
             imgEdit.src          = "../img/edit 1.png";
@@ -54,8 +55,8 @@ export class RendHome{
     static callLogout(){
         const cabecalho = document.querySelector(".cabecalho").addEventListener("click",(event) =>{
              if (event.target.tagName === "BUTTON") {
-                localStorage.removeItem("token")
-                localStorage.removeItem("MyId")
+                localStorage.removeItem("@blogKenzie:Usuario_Id")
+                localStorage.removeItem("@blogKenzie:token")
                 let url = location.href.replace("src/pages/home.html","index.html")
                 window.location.assign(url)
              }
@@ -65,8 +66,9 @@ export class RendHome{
 RendHome.callLogout()
 RendHome.creatElement(await Api.rendPost())
 RendHome.perfilRend(await Api.infUser())
-localStorage.setItem('MyId', 5)
-localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdydXBvREcyIiwiaWF0IjoxNjYxNTA1NzY0LCJleHAiOjE2NjE1MTY1NjR9.R8AxSYUrTH9-bX3_uAvl3tr4U4r5IsD-64tvb179SNA')
+Postagem.button
+localStorage.setItem("@blogKenzie:Usuario_Id", 810)
+localStorage.setItem("@blogKenzie:token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpZ2FzIiwiaWF0IjoxNjYxNTUzMjYzLCJleHAiOjE2NjE1NjQwNjN9.EdnxlFKYEdt1MtawB114jwuXIvQGYfopwBLz2TbmBpM")
 
 
 

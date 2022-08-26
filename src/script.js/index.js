@@ -4,9 +4,9 @@ class PaginaLogin {
     static renderizarPaginaLogin (){
         const token = localStorage.getItem("@blogKenzie:token")
 
-        if(token) {
-            window.location.assign("src/pages/home.html")
-        }
+        // if(token) {
+        //     window.location.assign("src/pages/home.html")
+        // }
         const emailInput = document.getElementById("emailInput")
         const passwordInput = document.getElementById("passwordInput")
         const btnLogin = document.getElementById("btnLogin")
