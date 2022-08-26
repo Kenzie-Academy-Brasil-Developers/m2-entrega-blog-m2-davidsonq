@@ -27,4 +27,18 @@ export class Api {
                                 .catch(err => console.log(err))
         return response
     }
+    static async cadastrarUser(data){
+        const response = await fetch(`${this.urlApi}/users/register`,{
+            method:"POST",
+            headers: {
+                "Content-Type": "application/json", 
+              },
+            body: JSON.stringify(data)
+            
+        })
+                                .then(res => res.json())
+                                .then(res => res)
+                                .catch(err => err)
+        return response
+    }
 };
