@@ -1,15 +1,15 @@
 export class ApiRequest {
     static baseUrl = "https://blog-m2.herokuapp.com"
-    static token = localStorage.getItem("@blogKenzie:token") || ""
+    static token = localStorage.getItem("@blogKenzie:token")
     static headers = {
         "Content-Type": "application/json",
         Authorization: `Bearer ${this.token}`
     }
     static async login (body){
-        const usuarioLogin = await fetch(`${this.baseUrl}/users/login`, {
+        const usuarioLogin = await fetch(`${this.baseUrl}/users/login`,{
             method: "POST",
             headers : this.headers,
-            body: json.stringfy(body)
+            body: JSON.stringify(body)
         })
         .then(res => res.json())
         .then(res => {
@@ -21,4 +21,4 @@ export class ApiRequest {
 
         return usuarioLogin
     }
-}
+}   
