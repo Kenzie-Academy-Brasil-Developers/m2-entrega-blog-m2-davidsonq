@@ -12,22 +12,22 @@
     <title>Home Page</title>
 </head>
 <body>
-    <header>
-        <figure>
+    <header class="cabecalho">
+        <figure class="cabecalho__figure">
             <img src="../img/e4342a4e0e968344b75cf50cf1936c09.jpg" alt="Foto de Perfil">
-            <figcaption>Lobinho pontinhos no mobile</figcaption>
+            <figcaption>Lobinho pontinhos</figcaption>
         </figure>
         <button>Logout</button>
     </header>
-    <main>
-        <section>
+    <main class="coitainer">
+        <section class="coitainer__batePapo">
             <form>
-                <input type="text" placeholder="No que está pensando?">
+                <textarea placeholder="No que está pensando?"></textarea>
                 <button type="submit"><span>Postar</span><img src="../img/mais.png" alt="Mais"></button>
             </form>
         </section>
         <section>
-            <ul>
+            <ul class="secao__lista">
                 <li>
                     <figure>
                         <img src="../img/e4342a4e0e968344b75cf50cf1936c09.jpg" alt="Perfil">
@@ -37,7 +37,7 @@
                     <span>22/08/2022</span>
                     <div>
                         <button><img src="../img/edit 1.png" alt="edit"></button>
-                        <button><img src="../img/trash-bin 1.png" alt="trash"></button>
+                        <button><img id="trash" src="../img/trash-bin 1.png" alt="trash"></button>
                     </div>
                 </li>
                 <li>
@@ -49,7 +49,7 @@
                     <span>22/08/2022</span>
                     <div>
                         <button><img src="../img/edit 1.png" alt="edit"></button>
-                        <button><img src="../img/trash-bin 1.png" alt="trash"></button>
+                        <button ><img src="../img/trash-bin 1.png" alt="trash"></button>
                     </div>
                 </li>
                 <li>
@@ -91,5 +91,6 @@
             </ul>
         </section>
     </main>
+    <script type="module" src="../js/home.js"></script>
 </body>
 </html>
