@@ -1,5 +1,6 @@
 body {
     font-family: 'Inter', sans-serif;
+    background-color: #1E1E1E;
 }
 
 .main__container {
@@ -7,7 +8,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 6rem 0;
+    margin: 0;
+    height: 100vh;
     border: 1px solid transparent;
     border-radius: 10px;
     background-color: #6495EDBF;
@@ -63,23 +65,23 @@ body {
 }
 
 .main__container__form > p > span {
-    color: #5C5D8D;
+    color: #4d4e7a;
     font-weight: 700;
     cursor: pointer;
 }
 
 @media (min-width: 425px){
     .main__container {
-        max-width: 350px;
+        max-width: 325px;
         margin: 0;
-    }
-    .main__container__form {    
-        width: 70%;
-
+        height: 100vh;
     }
     .main__container__form > button:hover {
         background-color: white;
         color:#5C5D8D;
+    }
+    .main__container__form > p > span:hover {
+        color: white;
     }
 }
 
