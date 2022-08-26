@@ -6,7 +6,7 @@ export class RendHome{
     };
     static creatElement(objApi){
         this.limparUl()
-        console.log(objApi.data);
+        // console.log(objApi.data);
         objApi.data.forEach(el => {
             const li             = document.createElement("li");
             const figure         = document.createElement("figure");
