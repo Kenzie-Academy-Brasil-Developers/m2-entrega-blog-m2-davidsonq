@@ -65,8 +65,7 @@ export class RendHome{
 RendHome.callLogout()
 RendHome.creatElement(await Api.rendPost())
 RendHome.perfilRend(await Api.infUser())
-localStorage.setItem('MyId', 5)
-localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkdydXBvREcyIiwiaWF0IjoxNjYxNTA1NzY0LCJleHAiOjE2NjE1MTY1NjR9.R8AxSYUrTH9-bX3_uAvl3tr4U4r5IsD-64tvb179SNA')
+
 
 
 
