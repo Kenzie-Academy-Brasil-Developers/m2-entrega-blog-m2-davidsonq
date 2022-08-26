@@ -32,8 +32,9 @@ body{
 }
 .cabecalho > button:hover{
     transition: 0.5s;
-    background-color: var(--text-color);
-    transform: scale(1.2);
+    background-color: var(--white-color);
+    color: var(--logouf-background);
+    
 }
 .cabecalho__figure{
     display: flex;
@@ -132,6 +133,7 @@ body{
 }
 .secao__lista li img{
     width: 68px;
+    height: 69px;
     border-radius: 100%;
     
 }
@@ -146,11 +148,15 @@ body{
     font-size: 0.9rem;
     font-weight: 400;
 }
-.secao__lista li > div{
+.secao__lista-divHiden{
+    display: none;
+}
+.secao__lista__div{
     display: flex;
     flex-direction: row;
 
 }
+
 .secao__lista li > div > button{
     cursor: pointer;
     border-radius: 100%;
@@ -231,26 +237,30 @@ body{
           
        }
        .secao__lista li > figure{
-             margin-top: 77px;
-             margin-left: 26px;
+             margin-left: 40px;
             flex-direction: row;
             display: flex;
             align-items: flex-start;
             gap: 42px;
+            height: 24px;
        }
        .secao__lista li > figure >img{
-            width: 150px;
+
+            width: 120px;
+            height: 101px;
 
         }   
         .secao__lista li > p{
-            margin: -79px 26px -85px 217px;
+            height: 50px;
+            overflow-y: hidden;
+            margin: 13px 0px 0px 201px;
         }
         .secao__lista li > span{
-            margin:160px 0 -88px 50vw;
+            margin: 53px 0 30px 50vw;
         }
-        .secao__lista li > div{
+        .secao__lista__div{
+            margin: -65px 0px 3px 27px;
             gap: 32px;
-            margin: 44px 0 69px 27px;
         }
         .cabecalho__figure > figcaption{
             text-overflow: initial;
