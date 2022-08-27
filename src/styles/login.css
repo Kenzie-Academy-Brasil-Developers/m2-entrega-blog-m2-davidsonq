@@ -1,0 +1,152 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color:#454D6B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main__container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 95vw;
+    height: 350px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #6495EDBF;
+    padding: 5px;
+}
+
+.main__container__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 90%;
+}
+
+.main__container__form > h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.main__container__form > label {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main__container__form > input {
+    height: 23px;
+    outline: none;
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.main__container__form > input::placeholder{
+    color: #C3C3C3;
+    font-size: 0.8rem;
+}
+
+.main__container__form > button {
+    margin: 2rem 0;
+    background-color: #5C5D8D;
+    padding: 0.5rem;
+    width: 50%;
+    font-weight: bold;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.main__container__form > p {
+    white-space: nowrap;
+    color: white;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.main__container__form > p > span {
+    color: #36e738;
+    font-weight: 700;
+    cursor: pointer;
+}
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000ab;
+    display: grid;
+    place-content: center;
+}
+.modal__box{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color:#6495ED;
+    border-radius: 8px;
+}
+.modal--modifere{
+    display: none;
+}
+.modal__container{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.modal__container > p{
+    color: white;
+    margin-top: 7px;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 1rem;
+}
+.modal__container > img{
+    width: 40px;
+}
+.modal__box > button{
+    cursor: pointer;
+    color: white;
+    font-size: 0.8rem;
+    background-color:#5C5D8D;
+    border:none;
+    border-radius: 4px;
+    width: 60px;
+    height: 40px;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+.modal__box > button:hover{
+    transition: 0.5s;
+    background-color: #454D6B;
+}
+
+@media (min-width: 425px){
+    .main__container {
+        max-width: 335px;
+        margin: 0 auto;
+        height: 335px;
+    }
+    .main__container__form > button:hover {
+        background-color: white;
+        color:#5C5D8D;
+    }
+    .main__container__form > p > span:hover {
+        color: white;
+    }
+}
+

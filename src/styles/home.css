@@ -1,0 +1,472 @@
+body{
+    font-family: 'Inter', sans-serif;
+}
+:root{
+    --azulClaro-color:#6495ED;
+    --azulEscuro-color:#454D6B;
+    --logouf-background:#5C5D8D;
+    --white-color:#FFFFFF;
+    --whiteEscuro-background :#ECF0F1;
+    --black-color:#030000;
+    --text-color:#363457;
+}
+.cabecalho{
+    width: 100%;
+    height: 83px;
+    background-color: var(--azulClaro-color);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cabecalho > button{
+    height: 38px;
+    width: 100px;
+    border: none;
+    background-color: var(--logouf-background);
+    color: var(--white-color);
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.cabecalho > button:hover{
+    transition: 0.5s;
+    background-color: var(--white-color);
+    color: var(--logouf-background);
+    
+}
+.cabecalho__figure{
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.cabecalho__figure > img{
+    width: 68px;
+    border-radius: 100%;
+    
+}
+.cabecalho__figure > figcaption{
+    width: 100px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white-color);
+    white-space: nowrap;
+    overflow: hidden;             
+    text-overflow:ellipsis;
+}
+.coitainer{
+    background-color: var(--azulEscuro-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.coitainer__batePapo{
+    display: flex;
+    align-items: center;
+    margin:39px 0 60px 0;
+    width: 250px;
+    height: 108px;
+    background-color: var(--whiteEscuro-background);
+    border-radius: 20px;
+
+}
+.coitainer__batePapo form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.coitainer__batePapo form > textarea{
+    padding: 11px 0px 0px 6px;
+    background-color: var(--whiteEscuro-background);
+    margin-left: 7px;
+    border: none;
+    outline: none;
+    resize: none;
+    width: 230px;
+    height: 50px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.coitainer__batePapo form > button > span{
+ display: none;
+}
+.coitainer__batePapo form > button {
+    width: 74px;
+    height: 32px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: var(--logouf-background);
+    transition: 0.5s;
+}
+.coitainer__batePapo form > button:hover{
+    transition: 0.5s;
+    background-color: var(--text-color);
+}
+.secao__lista{
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    margin-bottom: 50px;
+}
+.secao__lista li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 360px;
+    background-color: var(--whiteEscuro-background);
+    border-radius: 20px;
+    justify-content: space-around;
+}
+.secao__lista li > figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.secao__lista li > figure > figcaption{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--black-color);
+}
+.secao__lista li img{
+    width: 68px;
+    height: 69px;
+    border-radius: 100%;
+    
+}
+.secao__lista li > p{
+    word-break: break-word;
+    margin: 0 30px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.secao__lista li > span{
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+.secao__lista-divHiden{
+    display: none;
+}
+.secao__lista__div{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.secao__lista li > div > button{
+    cursor: pointer;
+    border-radius: 100%;
+    border: none;
+}
+
+.secao__lista li > div > button > img{
+    width: 48px;
+    height: 46px;
+    transition: 0.5s;
+}
+#trash{
+    width: 44px;
+    height: 42px;
+    transition: 0.5s;
+}
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000ab;
+    display: grid;
+    place-content: center;
+}
+.modal__box{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: #6495ED;
+    border-radius: 8px;
+}
+.modal__box2{
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: #6495ED;
+    border-radius: 8px;
+}
+.modal--modifere{
+    display: none;
+}
+.modal__container{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.modal__container > p{
+    color: var(--white-color);
+    margin-top: 7px;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 1rem;
+}
+.modal__container > img{
+    width: 40px;
+}
+.modal__box > button{
+    cursor: pointer;
+    color: white;
+    font-size: 0.8rem;
+    background-color:#5C5D8D;
+    border:none;
+    border-radius: 4px;
+    width: 60px;
+    height: 40px;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+.modal__box > button:hover{
+    transition: 0.5s;
+    background-color: #454D6B;
+}
+.modal__editar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 250px;
+    height: 331px;
+    background-color: var(--azulClaro-color);
+    justify-content: space-around;
+}
+.modal__editar__container{
+    gap: 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal__editar__container h2{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white-color);
+}
+.modal__editar__container textarea{
+    width: 200px;
+    height: 120px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    resize: none;   
+    padding: 20px 0px 0px 10px;
+}
+.modal__editar__container textarea::placeholder{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.modal__editar > button{
+   width: 152px;
+   height: 38px;
+   border-radius: 20px;
+   background-color: var(--logouf-background);
+   color: var(--white-color);
+   font-size: 1rem;
+   font-weight: 700;
+   border: none;
+   cursor: pointer;
+   transition: 0.5s;
+}
+.modal__editar > button:hover{
+    transition: 0.5s;
+    background-color: var(--text-color);
+}
+.modal__container2{
+    width: 250px;
+}
+.modal__container2 h2{
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    text-align: center;
+}
+#button__delete{
+    cursor: pointer;
+    margin-bottom: 25px;
+    width: 152px;
+    height: 38px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FF3F5B;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+#button__delete:hover{
+    transition: 0.5s;
+    background-color: #da334c;
+}
+.modal__fechar{
+    position: relative;
+    left: 222px;
+    top: 31px;
+    border: none;
+    background-color: #FF3F5B;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.modal__fechar:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+.modal__fechar2{
+    position: relative;
+    left: 259px;
+    top: 31px;
+    border: none;
+    background-color: #FF3F5B;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.modal__fechar2:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+@media (min-width:480px){
+    .modal__fechar{
+        left: 360px;
+        top: 31px;
+    }
+    .coitainer__batePapo{
+        width: 400px;
+        height: 126px;
+    }
+    .coitainer__batePapo form > textarea{
+        width: 380px;
+        height: 75px;
+    }
+    .secao__lista li{
+        width: 400px;
+    }
+    .modal__editar{
+        width: 400px;
+    }
+    .modal__editar__container textarea{
+        width: 300px;
+    }
+}
+@media (min-width:700px){
+    .modal__fechar{
+        left: 390px;
+        top: 31px;
+    }
+    .cabecalho{
+        justify-content: space-between;
+
+    }
+    .cabecalho__figure{
+        margin-left: 128px;
+    }
+    .cabecalho > button{
+        margin-right: 128px;
+    }
+    .modal__editar{
+        width: 430px;
+    }
+}
+@media (min-width:1020px) {
+    .modal__fechar2{
+        left: 345px;
+    }
+    .coitainer__batePapo{
+        width: 60%;
+    }
+    .coitainer__batePapo form > textarea{
+        width:50vw;
+        height: 50px;
+        margin-left: 30px;
+    }
+    .coitainer__batePapo form > button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 12vw;
+        height: 38px;
+    }
+    .coitainer__batePapo form > button > span{
+            display: flex;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--whiteEscuro-background);
+
+       }
+       .coitainer__batePapo form > button > img{
+            display: none;
+       }
+       .secao__lista li{
+            height: 231px;
+            display: flex;
+            width: 59vw;
+            justify-content: center;
+            align-items: flex-start;
+          
+       }
+       .secao__lista li > figure{
+             margin-left: 40px;
+            flex-direction: row;
+            display: flex;
+            align-items: flex-start;
+            gap: 42px;
+            height: 24px;
+       }
+       .secao__lista li > figure >img{
+
+            width: 120px;
+            height: 101px;
+
+        }   
+        .secao__lista li > p{
+            height: 50px;
+            margin: 13px 19px 0px 205px;
+        }
+        .secao__lista li > span{
+            margin: 53px 0 30px 50vw;
+        }
+        .secao__lista__div{
+            margin: -65px 0px 3px 27px;
+            gap: 32px;
+        }
+        .cabecalho__figure > figcaption{
+            text-overflow: initial;
+            overflow:unset;
+        }
+        .modal__box2{
+            width: 381px;
+        }
+}
