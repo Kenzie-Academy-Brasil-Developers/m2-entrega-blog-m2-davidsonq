@@ -127,6 +127,7 @@ body{
     align-items: center;
 }
 .secao__lista li > figure > figcaption{
+    text-align: center;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--black-color);

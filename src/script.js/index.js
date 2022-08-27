@@ -1,6 +1,7 @@
 import {ApiRequest} from "./request.js";
 
 class PaginaLogin {
+
     static renderizarPaginaLogin (){    
         const emailInput = document.getElementById("emailInput")
         const passwordInput = document.getElementById("passwordInput")
@@ -13,7 +14,8 @@ class PaginaLogin {
                 email: emailInput.value,  
                 password : passwordInput.value
             }
-            ApiRequest.login(dados)
+            console.log(ApiRequest.login(dados));
+            
         })
     }
     static cadastreAqui() {
