@@ -1,5 +1,6 @@
 import { Api } from "./Api.js";
 import {Postagem} from "./post.js";
+import { Modal } from "./modal.js";
 export class RendHome{
     static ul        = document.querySelector(".secao__lista");
     static limparUl (){
@@ -67,8 +68,4 @@ RendHome.callLogout()
 RendHome.creatElement(await Api.rendPost())
 RendHome.perfilRend(await Api.infUser())
 Postagem.button
-localStorage.setItem("@blogKenzie:Usuario_Id", 810)
-localStorage.setItem("@blogKenzie:token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpZ2FzIiwiaWF0IjoxNjYxNTUzMjYzLCJleHAiOjE2NjE1NjQwNjN9.EdnxlFKYEdt1MtawB114jwuXIvQGYfopwBLz2TbmBpM")
-
-
 

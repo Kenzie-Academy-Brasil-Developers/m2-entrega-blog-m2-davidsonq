@@ -1,3 +1,4 @@
+import { Modal } from "./modal.js";
 import {ApiRequest} from "./request.js";
 
 class PaginaLogin {

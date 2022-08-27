@@ -1,6 +1,7 @@
 import { Api } from "./Api.js";
+import { Modal } from "./modal.js";
 class Cadastro {
-    static button = document.querySelector("button").addEventListener("click", this.registarEnvio);
+    static button = document.querySelectorAll("button")[2].addEventListener("click", this.registarEnvio);
     static span   = document.querySelector("span").addEventListener("click",this.voltarLogin)
     static  async registarEnvio(event) {
         event.preventDefault();
@@ -11,21 +12,22 @@ class Cadastro {
             "avatarUrl": inputs[2].value,
             "password": inputs[3].value
         };
+
+        let modalErro = document.querySelectorAll(".modal")[1] ;
+        let modal = document.querySelectorAll(".modal")[0];
+
         for (const key in objCadastro) {
            if (!objCadastro[key]) {
-              return  alert("Preencha os campos corretamente!");
+            return modalErro.classList.remove("modal--modifere") ; 
            };
         };
+
         let resposta = await Api.cadastrarUser(objCadastro);
+
         if(!!resposta.id){
-                alert("Cadastro completo!");
-                let url = location.href.replace("/src/pages/cadastro.html","/index.html");
-                window.location.assign(url);
+            return modal.classList.remove("modal--modifere") ;
         }else{
-            if (resposta.message.includes("password")) {
-                return alert("A senha deve ter pelo menos seis dígitos, uma letra maiúscula e um número")
-            }
-            alert(`Um usuário com o mesmo nome de usuário já está registrado`);
+            return modalErro.classList.remove("modal--modifere") ; 
         };
 
     };

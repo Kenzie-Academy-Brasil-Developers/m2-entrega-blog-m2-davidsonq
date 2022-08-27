@@ -1,7 +1,7 @@
 export class Api {
-    static urlApi      = "https://blog-m2.herokuapp.com"
-    static myId        = localStorage.getItem("@blogKenzie:Usuario_Id") 
-    static token       = localStorage.getItem("@blogKenzie:token") 
+    static urlApi      = "https://blog-m2.herokuapp.com";
+    static myId        = localStorage.getItem("@blogKenzie:Usuario_Id"); 
+    static token       = localStorage.getItem("@blogKenzie:token") ;
 
     static async rendPost(number = "page=1"){
         const response = await fetch(`${this.urlApi}/posts?${number}`,{
@@ -12,8 +12,8 @@ export class Api {
               }
         })
                                 .then(res => res.json())
-                                .catch(err => console.log(err))
-        return response
+                                .catch(err => console.log(err));
+        return response;
     };
     static async infUser (){
         const response = await fetch(`${this.urlApi}/users/${this.myId}`,{
@@ -24,20 +24,21 @@ export class Api {
               }
         })
                                 .then(res => res.json())
-                                .catch(err => console.log(err))
-        return response
-    }
-    static async createrPost(data){
-        const response = await fetch(`${this.urlApi}/posts`,{
+                                .catch(err => console.log(err));
+        return response;
+    };
+    static async cadastrarUser(data){
+        const response = await fetch(`${this.urlApi}/users/register`,{
             method:"POST",
             headers: {
                 "Content-Type": "application/json", 
-                "Authorization": `Bearer ${this.token}` 
               },
-            body : JSON.stringify(data)
+            body: JSON.stringify(data)
+            
         })
                                 .then(res => res.json())
-                                .catch(err => console.log(err))
+                                .then(res => res)
+                                .catch(err => err)
         return response
     }
 };
