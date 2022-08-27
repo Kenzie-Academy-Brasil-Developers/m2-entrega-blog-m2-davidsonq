@@ -20,10 +20,11 @@ export class ApiRequest {
                 localStorage.setItem("@blogKenzie:Usuario_Id", res.userId)
                 localStorage.setItem("@blogKenzie:token" , res.token)
                 window.location.assign("src/pages/home.html")
-            }else{
-                let modalErro = document.querySelectorAll(".modal")[1] ;
-                return modalErro.classList.remove("modal--modifere")
             }
+            // }else{
+            //     let modalErro = document.querySelectorAll(".modal")[1] ;
+            //     return modalErro.classList.remove("modal--modifere")
+            // }
 
         })
         .catch(err => console.log(err))

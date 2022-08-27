@@ -3,7 +3,7 @@ export class Postagem {
     static button = document.querySelectorAll("button")[5].addEventListener("click",this.callBackButton)
     static async callBackButton(event){
         event.preventDefault()
-        const textarea = document.querySelector("textarea")
+        const textarea = document.querySelectorAll("textarea")[1]
         const objApi   = {
             "content": textarea.value
           }

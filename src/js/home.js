@@ -1,6 +1,8 @@
 import { Api } from "./Api.js";
 import {Postagem} from "./post.js";
 import { Modal } from "./modal.js";
+import { Editar } from "./Editar.js";
+
 export class RendHome{
     static ul        = document.querySelector(".secao__lista");
     static limparUl (){
@@ -37,6 +39,21 @@ export class RendHome{
             imgDelet.id          = "trash";
             imgDelet.alt         = "trash";
 
+            button1.addEventListener("click",(event) => {
+                event.preventDefault();
+                const texto    = event.currentTarget.parentElement.parentElement.children[1].innerText
+                const modal    = document.querySelectorAll(".modal")[2]
+                let textarea   = modal.children[0].children[0].children[1].children[0]
+                textarea.value = texto
+                modal.classList.remove("modal--modifere") ; 
+                Editar.capturarDados(el.id)
+            });
+            button2.addEventListener("click",(event) => {
+                event.preventDefault()
+                const modal = document.querySelectorAll(".modal")[3]
+                modal.classList.remove("modal--modifere") ;
+            });
+
             button2.appendChild(imgDelet);
             button1.appendChild(imgEdit);
             div.append(button1,button2);
@@ -67,4 +84,5 @@ RendHome.callLogout()
 RendHome.creatElement(await Api.rendPost())
 RendHome.perfilRend(await Api.infUser())
 Postagem.button
+
 

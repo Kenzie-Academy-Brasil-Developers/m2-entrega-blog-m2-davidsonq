@@ -41,4 +41,36 @@ export class Api {
                                 .catch(err => err)
         return response
     }
+    static async editarPost (id,data){
+        const response = await fetch(`${this.urlApi}/posts/${id}`,{
+            method:"PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${this.token}` 
+              },
+            body: JSON.stringify(data)
+            
+        })
+                                .then(res => res.json())
+                                .then(res => {
+                                    location.reload()
+                                })
+                                .catch(err => err)
+        return response
+    }
+    static async deletar(id){
+        const response = await fetch(`${this.urlApi}/posts/${id}`,{
+            method:"DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${this.token}` 
+              } 
+        })
+                                .then(res => res.json())
+                                .then(res => {
+                                    location.reload()
+                                })
+                                .catch(err => err)
+        return response
+    }
 };
