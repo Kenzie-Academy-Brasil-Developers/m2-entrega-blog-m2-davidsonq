@@ -67,9 +67,6 @@ export class Api {
               } 
         })
                                 .then(res => res.json())
-                                .then(res => {
-                                    location.reload()
-                                })
                                 .catch(err => err)
         return response
     }

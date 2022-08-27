@@ -2,6 +2,7 @@ import { Api } from "./Api.js";
 import {Postagem} from "./post.js";
 import { Modal } from "./modal.js";
 import { Editar } from "./Editar.js";
+import { Deletar } from "./Deletar.js";
 
 export class RendHome{
     static ul        = document.querySelector(".secao__lista");
@@ -41,17 +42,18 @@ export class RendHome{
 
             button1.addEventListener("click",(event) => {
                 event.preventDefault();
-                const texto    = event.currentTarget.parentElement.parentElement.children[1].innerText
-                const modal    = document.querySelectorAll(".modal")[2]
-                let textarea   = modal.children[0].children[0].children[1].children[0]
-                textarea.value = texto
+                const texto    = event.currentTarget.parentElement.parentElement.children[1].innerText;
+                const modal    = document.querySelectorAll(".modal")[2];
+                let textarea   = modal.children[0].children[0].children[1].children[0];
+                textarea.value = texto;
                 modal.classList.remove("modal--modifere") ; 
-                Editar.capturarDados(el.id)
+                Editar.capturarDados(el.id);
             });
             button2.addEventListener("click",(event) => {
                 event.preventDefault()
                 const modal = document.querySelectorAll(".modal")[3]
-                modal.classList.remove("modal--modifere") ;
+                modal.classList.remove("modal--modifere");
+                Deletar.capturarDados(el.id)
             });
 
             button2.appendChild(imgDelet);
