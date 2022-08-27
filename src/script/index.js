@@ -2,7 +2,7 @@ import {ApiRequest} from "./request.js";
 
 class PaginaLogin {
 
-    static renderizarPaginaLogin (){    
+    static async renderizarPaginaLogin (){    
         const emailInput = document.getElementById("emailInput")
         const passwordInput = document.getElementById("passwordInput")
         const btnLogin = document.getElementById("btnLogin")
@@ -14,7 +14,7 @@ class PaginaLogin {
                 email: emailInput.value,  
                 password : passwordInput.value
             }
-            console.log(ApiRequest.login(dados));
+            ApiRequest.login(dados)
             
         })
     }
@@ -27,3 +27,4 @@ class PaginaLogin {
 }
 PaginaLogin.renderizarPaginaLogin()
 PaginaLogin.cadastreAqui()
+

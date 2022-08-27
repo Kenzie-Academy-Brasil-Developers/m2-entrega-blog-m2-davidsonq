@@ -1,3 +1,4 @@
+import { Modal } from "../js/modal.js";
 export class ApiRequest {
     static baseUrl = "https://blog-m2.herokuapp.com"
     static token = localStorage.getItem("@blogKenzie:token")
@@ -15,10 +16,13 @@ export class ApiRequest {
         .then(res => res.json())
         .then(res => {
 
-            if(token){
+            if(!!res.token){
                 localStorage.setItem("@blogKenzie:Usuario_Id", res.userId)
                 localStorage.setItem("@blogKenzie:token" , res.token)
                 window.location.assign("src/pages/home.html")
+            }else{
+                let modalErro = document.querySelectorAll(".modal")[1] ;
+                return modalErro.classList.remove("modal--modifere");
             }
 
         })
@@ -30,17 +34,15 @@ export class ApiRequest {
     static async criarPostagem (body){
         const novaPostagem = await fetch (`${this.baseUrl}/posts`, {
             method: "POST",
-            headers: this.headers,
+            headers:{
+                "Content-Type": "application/json", 
+                "Authorization": `Bearer ${this.token}` 
+              },
             body: JSON.stringify(body)
         })
         .then(res => res.json())
-        .then(res => {
-            window.location.assign("../pages/home.html")
-
-            return res
-        })
-        .catch(err => console.log(err))
+        .catch(err => err)
 
         return novaPostagem
     }
-}   
+}  

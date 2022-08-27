@@ -1,17 +1,17 @@
-import { Api } from "./Api.js"
+import { ApiRequest } from "../script/request.js"
 export class Postagem {
-    static button = document.querySelectorAll("button")[1].addEventListener("click",this.callBackButton)
+    static button = document.querySelectorAll("button")[5].addEventListener("click",this.callBackButton)
     static async callBackButton(event){
         event.preventDefault()
-        const textarea = document.querySelector("textarea")
+        const textarea = document.querySelectorAll("textarea")[1]
         const objApi   = {
             "content": textarea.value
           }
           
-        let response = await Api.createrPost(objApi)
-        console.log(response.message);
+        let response = await ApiRequest.criarPostagem(objApi)
         if (!!response.message) {
-            return alert("conteúdo é um campo obrigatório; O conteúdo deve ter conteúdo")
+        let modalErro = document.querySelector(".modal") ;
+          return modalErro.classList.remove("modal--modifere") ;
         }
         location.reload()
     }

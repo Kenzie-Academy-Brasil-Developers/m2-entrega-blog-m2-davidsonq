@@ -1,5 +1,9 @@
 import { Api } from "./Api.js";
 import {Postagem} from "./post.js";
+import { Modal } from "./modal.js";
+import { Editar } from "./Editar.js";
+import { Deletar } from "./Deletar.js";
+
 export class RendHome{
     static ul        = document.querySelector(".secao__lista");
     static limparUl (){
@@ -7,7 +11,6 @@ export class RendHome{
     };
     static async creatElement(objApi){
         this.limparUl()
-        // console.log(objApi.data);
         objApi.data.forEach(el => {
             const li             = document.createElement("li");
             const figure         = document.createElement("figure");
@@ -37,6 +40,23 @@ export class RendHome{
             imgDelet.id          = "trash";
             imgDelet.alt         = "trash";
 
+            button1.addEventListener("click",(event) => {
+                event.preventDefault();
+                const texto    = event.currentTarget.parentElement.parentElement.children[1].innerText;
+                const modal    = document.querySelectorAll(".modal")[2];
+                let textarea   = modal.children[1].children[0].children[1].children[0];
+                console.log(textarea);
+                textarea.value = texto;
+                modal.classList.remove("modal--modifere") ; 
+                Editar.capturarDados(el.id);
+            });
+            button2.addEventListener("click",(event) => {
+                event.preventDefault();
+                const modal = document.querySelectorAll(".modal")[3]
+                modal.classList.remove("modal--modifere");
+                Deletar.capturarDados(el.id);
+            });
+
             button2.appendChild(imgDelet);
             button1.appendChild(imgEdit);
             div.append(button1,button2);
@@ -55,20 +75,31 @@ export class RendHome{
     static callLogout(){
         const cabecalho = document.querySelector(".cabecalho").addEventListener("click",(event) =>{
              if (event.target.tagName === "BUTTON") {
-                localStorage.removeItem("@blogKenzie:Usuario_Id")
-                localStorage.removeItem("@blogKenzie:token")
-                let url = location.href.replace("src/pages/home.html","index.html")
-                window.location.assign(url)
-             }
+                localStorage.removeItem("@blogKenzie:Usuario_Id");
+                localStorage.removeItem("@blogKenzie:token");
+                let url = location.href.replace("src/pages/home.html","index.html");
+                window.location.assign(url);
+             };
         });
-    }
+    };
+    static modalFechar = document.querySelectorAll(".modal__fechar")[0].addEventListener("click",this.callFechar);
+    static modalFechar2 = document.querySelectorAll(".modal__fechar2")[0].addEventListener("click",this.callFechar);
+    static callFechar(event){
+        event.preventDefault()
+
+        const modal = document.querySelectorAll(".modal")[2]
+        const modal2 = document.querySelectorAll(".modal")[3]
+       
+        modal2.classList.add("modal--modifere")
+        modal.classList.add("modal--modifere");
+        
+    };
 };
+RendHome.modalFechar
+RendHome.modalFechar2
 RendHome.callLogout()
 RendHome.creatElement(await Api.rendPost())
 RendHome.perfilRend(await Api.infUser())
 Postagem.button
-localStorage.setItem("@blogKenzie:Usuario_Id", 810)
-localStorage.setItem("@blogKenzie:token","eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlRpZ2FzIiwiaWF0IjoxNjYxNTUzMjYzLCJleHAiOjE2NjE1NjQwNjN9.EdnxlFKYEdt1MtawB114jwuXIvQGYfopwBLz2TbmBpM")
-
 
 
