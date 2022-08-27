@@ -1,7 +1,7 @@
-import { ApiRequest } from "../script.js/request.js"
-import { Modal } from "./modal.js";
+import { ApiRequest } from "../script/request.js"
+// import { Modal } from "./modal.js";
 export class Postagem {
-    static button = document.querySelectorAll("button")[1].addEventListener("click",this.callBackButton)
+    static button = document.querySelectorAll("button")[3].addEventListener("click",this.callBackButton)
     static async callBackButton(event){
         event.preventDefault()
         const textarea = document.querySelector("textarea")

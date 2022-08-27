@@ -104,7 +104,6 @@ body{
 .coitainer__batePapo form > button:hover{
     transition: 0.5s;
     background-color: var(--text-color);
-    transform: scale(1.2);
 }
 .secao__lista{
     display: flex;
@@ -140,6 +139,7 @@ body{
     
 }
 .secao__lista li > p{
+    margin: 0 30px;
     font-size: 0.9rem;
     font-weight: 400;
     color: var(--text-color);
