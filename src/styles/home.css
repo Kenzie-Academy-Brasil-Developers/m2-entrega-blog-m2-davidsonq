@@ -195,6 +195,15 @@ body{
     background-color: #6495ED;
     border-radius: 8px;
 }
+.modal__box2{
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: #6495ED;
+    border-radius: 8px;
+}
 .modal--modifere{
     display: none;
 }
@@ -230,6 +239,84 @@ body{
     transition: 0.5s;
     background-color: #454D6B;
 }
+.modal__editar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 250px;
+    height: 331px;
+    background-color: var(--azulClaro-color);
+    justify-content: space-around;
+}
+.modal__editar__container{
+    gap: 46px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal__editar__container h2{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white-color);
+}
+.modal__editar__container textarea{
+    width: 200px;
+    height: 120px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    resize: none;   
+    padding: 20px 0px 0px 10px;
+}
+.modal__editar__container textarea::placeholder{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-color);
+}
+.modal__editar > button{
+   width: 152px;
+   height: 38px;
+   border-radius: 20px;
+   background-color: var(--logouf-background);
+   color: var(--white-color);
+   font-size: 1rem;
+   font-weight: 700;
+   border: none;
+   cursor: pointer;
+   transition: 0.5s;
+}
+.modal__editar > button:hover{
+    transition: 0.5s;
+    background-color: var(--text-color);
+}
+.modal__container2{
+    width: 250px;
+}
+.modal__container2 h2{
+    margin-top: 50px;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white-color);
+    text-align: center;
+}
+#button__delete{
+    cursor: pointer;
+    margin-bottom: 25px;
+    width: 152px;
+    height: 38px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FF3F5B;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.5s;
+}
+#button__delete:hover{
+    transition: 0.5s;
+    background-color: #da334c;
+}
 @media (min-width:480px){
     .coitainer__batePapo{
         width: 400px;
@@ -242,6 +329,12 @@ body{
     .secao__lista li{
         width: 400px;
     }
+    .modal__editar{
+        width: 400px;
+    }
+    .modal__editar__container textarea{
+        width: 300px;
+    }
 }
 @media (min-width:700px){
     .cabecalho{
@@ -253,6 +346,9 @@ body{
     }
     .cabecalho > button{
         margin-right: 128px;
+    }
+    .modal__editar{
+        width: 430px;
     }
 }
 @media (min-width:1020px) {
@@ -318,5 +414,8 @@ body{
         .cabecalho__figure > figcaption{
             text-overflow: initial;
             overflow:unset;
+        }
+        .modal__box2{
+            width: 381px;
         }
 }
