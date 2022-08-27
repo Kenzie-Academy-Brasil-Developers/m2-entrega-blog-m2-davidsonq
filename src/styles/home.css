@@ -139,6 +139,7 @@ body{
     
 }
 .secao__lista li > p{
+    word-break: break-word;
     margin: 0 30px;
     font-size: 0.9rem;
     font-weight: 400;
@@ -173,10 +174,6 @@ body{
     width: 44px;
     height: 42px;
     transition: 0.5s;
-}
-.secao__lista li > div > button > img:hover{
-    transition: 0.5s;
-    transform: scale(1.2);
 }
 .modal{
     position: fixed;
@@ -317,7 +314,55 @@ body{
     transition: 0.5s;
     background-color: #da334c;
 }
+.modal__fechar{
+    position: relative;
+    left: 222px;
+    top: 31px;
+    border: none;
+    background-color: #FF3F5B;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.modal__fechar:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+.modal__fechar2{
+    position: relative;
+    left: 259px;
+    top: 31px;
+    border: none;
+    background-color: #FF3F5B;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.modal__fechar2:hover{
+    transition: 0.5s;
+    transform: scale(1.2);
+}
 @media (min-width:480px){
+    .modal__fechar{
+        left: 360px;
+        top: 31px;
+    }
     .coitainer__batePapo{
         width: 400px;
         height: 126px;
@@ -337,6 +382,10 @@ body{
     }
 }
 @media (min-width:700px){
+    .modal__fechar{
+        left: 390px;
+        top: 31px;
+    }
     .cabecalho{
         justify-content: space-between;
 
@@ -352,6 +401,9 @@ body{
     }
 }
 @media (min-width:1020px) {
+    .modal__fechar2{
+        left: 345px;
+    }
     .coitainer__batePapo{
         width: 60%;
     }
@@ -401,8 +453,7 @@ body{
         }   
         .secao__lista li > p{
             height: 50px;
-            overflow-y: hidden;
-            margin: 13px 0px 0px 205px;
+            margin: 13px 19px 0px 205px;
         }
         .secao__lista li > span{
             margin: 53px 0 30px 50vw;

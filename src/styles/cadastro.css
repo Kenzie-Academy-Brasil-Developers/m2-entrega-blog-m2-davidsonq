@@ -17,7 +17,7 @@ body{
     background-color: var(--background-color);
 }
 .main__container__form{
-    background-color:#8baff1;
+    background-color:#6495EDBF;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -70,7 +70,7 @@ body{
     font-size: 0.8rem;
 }
 .main__container__form >p > span{
-    color: var(--background-button);
+    color: #36e738;
     cursor: pointer;
 }
 .modal{

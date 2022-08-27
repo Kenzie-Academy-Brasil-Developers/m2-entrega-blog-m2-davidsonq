@@ -38,9 +38,9 @@ export class Api {
         })
                                 .then(res => res.json())
                                 .then(res => res)
-                                .catch(err => err)
-        return response
-    }
+                                .catch(err => err);
+        return response;
+    };
     static async editarPost (id,data){
         const response = await fetch(`${this.urlApi}/posts/${id}`,{
             method:"PATCH",
@@ -55,9 +55,9 @@ export class Api {
                                 .then(res => {
                                     location.reload()
                                 })
-                                .catch(err => err)
-        return response
-    }
+                                .catch(err => err);
+        return response;
+    };
     static async deletar(id){
         const response = await fetch(`${this.urlApi}/posts/${id}`,{
             method:"DELETE",
@@ -67,7 +67,7 @@ export class Api {
               } 
         })
                                 .then(res => res.json())
-                                .catch(err => err)
-        return response
-    }
+                                .catch(err => err);
+        return response;
+    };
 };

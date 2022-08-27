@@ -44,16 +44,17 @@ export class RendHome{
                 event.preventDefault();
                 const texto    = event.currentTarget.parentElement.parentElement.children[1].innerText;
                 const modal    = document.querySelectorAll(".modal")[2];
-                let textarea   = modal.children[0].children[0].children[1].children[0];
+                let textarea   = modal.children[1].children[0].children[1].children[0];
+                console.log(textarea);
                 textarea.value = texto;
                 modal.classList.remove("modal--modifere") ; 
                 Editar.capturarDados(el.id);
             });
             button2.addEventListener("click",(event) => {
-                event.preventDefault()
+                event.preventDefault();
                 const modal = document.querySelectorAll(".modal")[3]
                 modal.classList.remove("modal--modifere");
-                Deletar.capturarDados(el.id)
+                Deletar.capturarDados(el.id);
             });
 
             button2.appendChild(imgDelet);
@@ -74,14 +75,28 @@ export class RendHome{
     static callLogout(){
         const cabecalho = document.querySelector(".cabecalho").addEventListener("click",(event) =>{
              if (event.target.tagName === "BUTTON") {
-                localStorage.removeItem("@blogKenzie:Usuario_Id")
-                localStorage.removeItem("@blogKenzie:token")
-                let url = location.href.replace("src/pages/home.html","index.html")
-                window.location.assign(url)
-             }
+                localStorage.removeItem("@blogKenzie:Usuario_Id");
+                localStorage.removeItem("@blogKenzie:token");
+                let url = location.href.replace("src/pages/home.html","index.html");
+                window.location.assign(url);
+             };
         });
-    }
+    };
+    static modalFechar = document.querySelectorAll(".modal__fechar")[0].addEventListener("click",this.callFechar);
+    static modalFechar2 = document.querySelectorAll(".modal__fechar2")[0].addEventListener("click",this.callFechar);
+    static callFechar(event){
+        event.preventDefault()
+
+        const modal = document.querySelectorAll(".modal")[2]
+        const modal2 = document.querySelectorAll(".modal")[3]
+       
+        modal2.classList.add("modal--modifere")
+        modal.classList.add("modal--modifere");
+        
+    };
 };
+RendHome.modalFechar
+RendHome.modalFechar2
 RendHome.callLogout()
 RendHome.creatElement(await Api.rendPost())
 RendHome.perfilRend(await Api.infUser())

@@ -12,4 +12,5 @@ export class Modal{
                 event.target.closest(".modal").classList.add("modal--modifere")
          }
     }
+    
 };
