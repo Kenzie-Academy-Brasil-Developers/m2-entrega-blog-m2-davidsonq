@@ -73,6 +73,9 @@ body{
     color: #36e738;
     cursor: pointer;
 }
+.main__container__form >p > span:hover{
+    color: var(--white-color);
+}
 .modal{
     position: fixed;
     width: 100%;
