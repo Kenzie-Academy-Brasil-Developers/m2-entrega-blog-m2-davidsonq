@@ -10,6 +10,10 @@ export class RendHome{
         this.ul.innerHTML = "";
     };
     static async creatElement(objApi){
+        if (!localStorage.getItem("@blogKenzie:token")) {
+            let url = location.href.replace("/src/pages/home.html","/index.html");
+            window.location.assign(url);
+        };
         this.limparUl()
         objApi.data.forEach(el => {
             const li             = document.createElement("li");
@@ -64,7 +68,31 @@ export class RendHome{
             li.append(figure,p,span,div);
             this.ul.appendChild(li);
         });
-    }
+        const setinha1     = document.querySelectorAll(".footer__setinha")[0];
+        const setinha2     = document.querySelectorAll(".footer__setinha")[1];
+        const pagina       = document.querySelector(".footer__pagina")
+
+        pagina.innerText   = Number(objApi.nextPage.replace("page=","")) - 1
+            if (!!objApi.previousPage) {
+                setinha1.innerText = "<";
+            }else{
+                setinha1.innerText = "";
+            };
+            if (!!objApi.nextPage) {
+                setinha2.innerText = ">";
+            } else {
+                setinha2.innerText = "";
+            };            
+            setinha1.id    = objApi.previousPage;
+        
+        setinha2.id        = objApi.nextPage;
+    };
+    static voltarPagina     = document.querySelectorAll(".footer__setinha")[0].addEventListener("click",async () => {
+        RendHome.creatElement(await Api.rendPost(document.querySelectorAll(".footer__setinha")[0].id));
+    });
+    static proximaPagina     = document.querySelectorAll(".footer__setinha")[1].addEventListener("click",async () =>{
+        RendHome.creatElement(await Api.rendPost(document.querySelectorAll(".footer__setinha")[1].id));
+    });   
     static perfilRend(objApi){
         const figure      = document.querySelector(".cabecalho__figure");
         const imgPerfil   = figure.children[0];
@@ -93,6 +121,7 @@ export class RendHome{
         modal2.classList.add("modal--modifere")
         modal.classList.add("modal--modifere");
         
+        
     };
 };
 RendHome.modalFechar
@@ -101,5 +130,6 @@ RendHome.callLogout()
 RendHome.creatElement(await Api.rendPost())
 RendHome.perfilRend(await Api.infUser())
 Postagem.button
-
+RendHome.voltarPagina
+RendHome.proximaPagina
 
